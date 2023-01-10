@@ -12,13 +12,16 @@
     <script src="react-clone.js" type="module"></script>
 
     <script type="text/babel">
-      const element = ReactClone.createElement(
-        "div",
-        { id: "foo" },
-        ReactClone.createElement("h1", null, "Welcome"),
-        ReactClone.createElement("a", { href: "#" }, "Check it out")
+      /** @jsx ReactClone.createElement */
+      const element = (
+        <div id="foo">
+          <h1>Welcome</h1>
+          <a href="#">Check it out</a>
+        </div>
       );
       console.log(element);
+
+      ReactClone.render(element, document.getElementById("root"));
     </script>
   </body>
 </html>
